@@ -29,3 +29,16 @@ def select_all():
         cameras.append(camera)
     
     return cameras
+
+def select(id):
+    camera = None
+
+    sql = "SELECT * FROM cameras WHERE id = %s"
+    values = [id]
+
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        make = make_repository.select(result['make_id'])
+        camera = Camera(result['name'], make, result['type'], result['description'], result['stock'], result['buy_price'], result['sell_price'], result['id'])
+    return camera

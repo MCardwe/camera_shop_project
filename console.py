@@ -26,6 +26,9 @@ cameras = camera_repository.select_all()
 for camera in cameras:
     print(camera.__dict__)
 
+camera = camera_repository.select(2)
+print(camera)
+
 # makes = make_repository.select_all()
 # for make in makes:
 #     print(make.__dict__)
