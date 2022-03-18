@@ -23,16 +23,16 @@ camera2 = Camera("a7", make3, "Mirrorless Camera", "Full frame high end camera",
 camera_repository.save(camera1)
 camera_repository.save(camera2)
 
-cameras = camera_repository.select_all()
-for camera in cameras:
-    print(camera.__dict__)
-
 # camera = camera_repository.select(2)
 # print(camera)
 
 # camera_repository.update(camera3)
 
+# camera_repository.delete(10)
 
+cameras = camera_repository.select_all()
+for camera in cameras:
+    print(camera.__dict__)
 
 
 makes = make_repository.select_all()
