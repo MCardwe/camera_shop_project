@@ -6,22 +6,36 @@ from models.make import Make
 import repositories.camera_repository as camera_repository
 import repositories.make_repository as make_repository
 
-camera_repository.delete_all()
-make_repository.delete_all()
 
-make1 = Make("Canon")
-make2 = Make("Nikon")
-make3 = Make("Sony")
+camera = camera_repository.select(14)
+print(camera)
 
-make_repository.save(make1)
-make_repository.save(make2)
-make_repository.save(make3)
+# camera_repository.delete_all()
+# make_repository.delete_all()
 
-camera1 = Camera("250d", make1, "Compact DSLR", "Lightweight APS-C mid-range camera", 5, 250, 500)
-camera2 = Camera("a7", make3, "Mirrorless Camera", "Full frame high end camera", 3, 600, 1200)
+# make_canon = Make("Canon")
+# make_nikon = Make("Nikon")
+# make_sony = Make("Sony")
+# make_fuji = Make("Fuji")
+# make_panasonic = Make("Panasonic")
+# make_olympus = Make("Olympus")
 
-camera_repository.save(camera1)
-camera_repository.save(camera2)
+# make_repository.save(make_canon)
+# make_repository.save(make_nikon)
+# make_repository.save(make_sony)
+# make_repository.save(make_fuji)
+# make_repository.save(make_panasonic)
+# make_repository.save(make_olympus)
+
+# camera_compact_dslr = Camera("250d", make_canon, "Compact DSLR", "Lightweight APS-C DSLR mid-range camera", 5, 250, 500)
+# camera_mirroless = Camera("a7", make_sony, "Mirrorless Camera", "Full frame mirrorless high end camera", 3, 600, 1200)
+# camera_compact_mirroless = Camera("M50", make_canon, "Compact Mirroless", "Lightweight APS-C mirrorless mid-range camera", 4, 300, 600)
+# camera_dslr = Camera("5D MKIV", make_canon, "DSLR", "Full frame DSLR high end camera", 2, 1000, 2000)
+
+# camera_repository.save(camera_dslr)
+# camera_repository.save(camera_compact_dslr)
+# camera_repository.save(camera_mirroless)
+# camera_repository.save(camera_compact_mirroless)
 
 # camera = camera_repository.select(2)
 # print(camera)
@@ -30,14 +44,14 @@ camera_repository.save(camera2)
 
 # camera_repository.delete(10)
 
-cameras = camera_repository.select_all()
-for camera in cameras:
-    print(camera.__dict__)
+# cameras = camera_repository.select_all()
+# for camera in cameras:
+#     print(camera.__dict__)
 
 
-makes = make_repository.select_all()
-for make in makes:
-    print(make.__dict__)
+# makes = make_repository.select_all()
+# for make in makes:
+#     print(make.__dict__)
 
 # selected_make = make_repository.select(3)
 # print(selected_make)

@@ -2,4 +2,18 @@
 
 {% block content %}
 
+<div class="camera_container_show">
+    <p><b>Name: </b>{{camera.name}}</p>
+    <p><b>Make: </b><a href='/make/{{camera.make.id}}'>{{camera.make.name}}</a></p>
+    <p><b>Type: </b>{{camera.type}}</p>
+    <p><b>Description:</b> {{camera.description}}</p>
+    <p><b>Stock Count:</b> {{camera.stock}}</p>
+    <p><b>Buying Price: </b>£{{camera.buy_price}}</p>
+    <p><b>Selling Pirce: </b>£{{camera.sell_price}}</p>
+    <p><b>ID: </b>{{camera.id}} <a href="/cameras/{{camera.id}}/edit">Edit</p>
+    <form action="/cameras/{{camera.id}}/delete">
+        <button type="submit">Delete</button>
+    </form>
+</div>
+
 {% endblock %}

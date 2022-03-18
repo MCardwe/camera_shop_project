@@ -4,8 +4,9 @@
 
 <div class="cameras_container">
     {% for camera in cameras %}
-        <p><b>{{camera.make.name}} {{camera.name}}</b></p>
-        <hr> 
+        <hr>
+        <p><b><a href='/cameras/{{camera.id}}'>{{camera.make.name}} {{camera.name}}</a></b></p>
+        
         <p><b>Type :</b> {{camera.type}} <b>Description:</b> {{camera.description}} <b>ID:</b> {{camera.id}}</p>
         <p><b>Buying Price:</b> £{{camera.buy_price}}</p>
         <p><b>Selling Price:</b> £{{camera.sell_price}}</p>
