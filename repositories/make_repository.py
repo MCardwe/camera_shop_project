@@ -54,5 +54,9 @@ def delete_all():
     sql = "DELETE FROM makes"
     run_sql(sql)
 
-def delete():
-    pass
+def delete(id):
+    
+    sql = "DELETE FROM makes WHERE id = %s"
+    values = [id]
+
+    run_sql(sql, values)

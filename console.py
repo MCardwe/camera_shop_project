@@ -28,4 +28,11 @@ make_repository.update(make_sony)
 makes = make_repository.select_all()
 for make in makes:
     print(make.__dict__)
+
+make_repository.delete(4)
+
+makes = make_repository.select_all()
+for make in makes:
+    print(make.__dict__)
+
 pdb.set_trace()
