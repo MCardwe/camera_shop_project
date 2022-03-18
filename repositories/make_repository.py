@@ -29,8 +29,17 @@ def select_all():
 
     return makes
 
-def select():
-    pass
+def select(id):
+    make = None
+
+    sql = "SELECT * FROM makes WHERE id = %s"
+    values = [id]
+
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        make = Make(result['name'], result['id'])
+    return make
 
 def update():
     pass
