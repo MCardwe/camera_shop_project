@@ -54,3 +54,8 @@ def add_camera():
 def show(id):
     camera = camera_repository.select(id)
     return render_template('cameras/show.html', camera=camera)
+
+@cameras_blueprint.route("/cameras/<id>/delete", methods=["POST"])
+def delete_camera(id):
+    camera_repository.delete(id)
+    return redirect('/cameras')

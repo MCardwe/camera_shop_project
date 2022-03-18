@@ -11,7 +11,7 @@
     <p><b>Buying Price: </b>£{{camera.buy_price}}</p>
     <p><b>Selling Pirce: </b>£{{camera.sell_price}}</p>
     <p><b>ID: </b>{{camera.id}} <a href="/cameras/{{camera.id}}/edit">Edit</p>
-    <form action="/cameras/{{camera.id}}/delete">
+    <form action="/cameras/{{camera.id}}/delete" method="POST">
         <button type="submit">Delete</button>
     </form>
 </div>
