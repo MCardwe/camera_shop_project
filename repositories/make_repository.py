@@ -50,7 +50,9 @@ def update(make):
     run_sql(sql, values)
 
 def delete_all():
-    pass
+    
+    sql = "DELETE FROM makes"
+    run_sql(sql)
 
 def delete():
     pass
