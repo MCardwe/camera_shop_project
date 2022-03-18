@@ -42,3 +42,22 @@ def select(id):
         make = make_repository.select(result['make_id'])
         camera = Camera(result['name'], make, result['type'], result['description'], result['stock'], result['buy_price'], result['sell_price'], result['id'])
     return camera
+
+def update(camera):
+    
+    sql = "UPDATE cameras SET (name, make_id, type, description, stock, buy_price, sell_price) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [camera.name, camera.make.id, camera.type, camera.description, camera.stock, camera.buy_price, camera.sell_price, camera.id]
+
+    run_sql(sql, values)
+
+def delete_all():
+    
+    sql = "DELETE FROM cameras"
+    run_sql(sql)
+
+def delete(id):
+    
+    sql = "DELETE FROM cameras WHERE id = %s"
+    values = [id]
+
+    run_sql(sql, values)
