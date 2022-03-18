@@ -2,4 +2,21 @@
 
 {% block content %}
 
+<form>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" placeholder="name" required>
+    </div>
+
+    <div>
+        <label for="make">Please select the make of the camera</label>
+        <select id="make" name="make_id">
+            {% for make in makes %}
+                <option value="{{make.id}}">{{make.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    
+</form>
+
 {% endblock %}
