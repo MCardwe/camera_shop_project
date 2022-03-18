@@ -19,4 +19,11 @@ for make in makes:
 selected_make = make_repository.select(2)
 print(selected_make)
 
+make_sony = Make("Sony", 2)
+
+make_repository.update(make_sony)
+
+makes = make_repository.select_all()
+for make in makes:
+    print(make.__dict__)
 pdb.set_trace()

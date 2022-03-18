@@ -1,3 +1,4 @@
+from cProfile import run
 from unicodedata import name
 from db.run_sql import run_sql
 
@@ -41,8 +42,12 @@ def select(id):
         make = Make(result['name'], result['id'])
     return make
 
-def update():
-    pass
+def update(make):
+    
+    sql = "UPDATE makes SET name = %s WHERE id = %s"
+    values = [make.name, make.id]
+
+    run_sql(sql, values)
 
 def delete_all():
     pass
