@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="makes_container">
+    {% for make in makes %}
+
+        <div class="makes">
+            <p><h1><a href="/makes/{{make.id}}">{{make.name}}</a></h1></p>
+            <h3><a href="/makes/{{make.id}}/edit">Edit </a></h3><h3><a href="/makes/{{make.id}}/delete"> Delete</a></h3>
+        </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}
