@@ -7,8 +7,8 @@ import repositories.camera_repository as camera_repository
 import repositories.make_repository as make_repository
 
 
-camera = camera_repository.select(14)
-print(camera)
+# camera = camera_repository.select(14)
+# print(camera)
 
 # camera_repository.delete_all()
 # make_repository.delete_all()

@@ -21,7 +21,7 @@
 
     <div>
         <label for="type">Type of Camera:</label>
-        <select id="type" name="type">
+        <select id="type" name="type" disabled>
             {% for selected in all_cameras %}
                 <option value="{{selected.type}}" 
                 {% if camera.type== selected.type %} selected="selected" {% endif %}>
