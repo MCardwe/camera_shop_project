@@ -2,4 +2,56 @@
 
 {% block content %}
 
+<form class="new_form_container" action="/cameras/{{camera.id}}/edit" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="{{camera.name}}" required>
+    </div>
+
+    <div>
+        <label for="make">Make:</label>
+        <select id="make" name="make_id">
+            {% for make in makes %}
+                <option value="{{make.id}}" 
+                {% if camera.make.id== make.id %} selected="selected" {% endif %}>
+                {{make.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        <label for="type">Type of Camera:</label>
+        <select id="type" name="type">
+            {% for selected in all_cameras %}
+                <option value="{{selected.type}}" 
+                {% if camera.type== selected.type %} selected="selected" {% endif %}>
+                {{selected.type}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        <label for="description">Description:</label>
+        <input type="text" name="description" value="{{camera.description}}">
+    </div>
+
+    <div>
+        <label for="stock">Stock Count:</label>
+        <input type="number" name="stock" value="{{camera.stock}}">
+    </div>
+
+    <div>
+        <label for="buy_price">Buy Price: £</label>
+        <input type="number" name="buy_price" value="{{camera.buy_price}}">
+    </div>
+
+    <div>
+        <label for="sell_price">Sell Price: £</label>
+        <input type="number" name="sell_price" value="{{camera.sell_price}}">
+    </div>
+    
+    <button type="submit">Update Camera</button>
+</form>
+
+
 {% endblock %}

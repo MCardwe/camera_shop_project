@@ -59,3 +59,14 @@ def show(id):
 def delete_camera(id):
     camera_repository.delete(id)
     return redirect('/cameras')
+
+@cameras_blueprint.route("/cameras/<id>/edit", methods=["GET"])
+def edit_form(id):
+    camera = camera_repository.select(id)
+    all_cameras = camera_repository.select_all()
+    makes = make_repository.select_all()
+    return render_template("/cameras/edit.html", camera=camera, makes=makes, all_cameras = all_cameras)
+
+@cameras_blueprint.route("/cameras/<id>/edit", methods=["POST"])
+def edit_camera(id):
+    
