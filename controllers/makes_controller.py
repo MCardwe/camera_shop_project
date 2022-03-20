@@ -13,3 +13,29 @@ makes_blueprint = Blueprint("makes", __name__)
 def makes():
     makes = make_repository.select_all()
     return render_template("makes/index.html", makes=makes)
+
+@makes_blueprint.route("/makes/new", methods=["GET"])
+def new_form():
+    return render_template("makes/new.html")
+
+@makes_blueprint.route("/makes", methods=["POST"])
+def add():
+    name = request.form['name']
+    make = Make(name)
+    make_repository.save(make)
+    return redirect("/makes")
+
+@makes_blueprint.route("/makes/<id>/edit", methods=["GET"])
+def edit_form(id):
+    make = make_repository.select(id)
+    return render_template("makes/edit.html", make=make)
+
+@makes_blueprint.route("/makes/<id>/edit", methods=["POST"])
+def edit(id):
+    name = request.form['name']
+    make = Make(name, id)
+    make_repository.update(make)
+    return redirect("/makes")
+
+@makes_blueprint.route("/makes/<id>/delete")
+def delete()

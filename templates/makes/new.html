@@ -2,4 +2,13 @@
 
 {% block content %}
 
+<div class="makes_new_container">
+    <h2>Add a new make:</h2>
+    <form action="/makes" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" placeholder="name" required>
+        <button type="submit">Add Make</button>
+    </form>
+</div>
+
 {% endblock %}
