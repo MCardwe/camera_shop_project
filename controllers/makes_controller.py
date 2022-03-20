@@ -38,4 +38,12 @@ def edit(id):
     return redirect("/makes")
 
 @makes_blueprint.route("/makes/<id>/delete")
-def delete()
+def delete(id):
+    make_repository.delete(id)
+    return redirect("/makes")
+
+@makes_blueprint.route("/makes/<id>")
+def show(id):
+    cameras = camera_repository.select_all()
+    make = make_repository.select(id)
+    return render_template("/makes/show.html", cameras=cameras, make=make)

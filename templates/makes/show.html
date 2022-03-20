@@ -2,4 +2,18 @@
 
 {% block content %}
 
+<div class="show_container_make">
+    {% for camera in cameras %}
+        {% if camera.make.id == make.id %}
+        <hr>
+        <p><b><a href='/cameras/{{camera.id}}'>{{camera.make.name}} {{camera.name}}</a></b></p>
+        
+        <p><b>Type :</b> {{camera.type}} <b>Description:</b> {{camera.description}} <b>ID:</b> {{camera.id}}</p>
+        <p><b>Buying Price:</b> £{{camera.buy_price}}</p>
+        <p><b>Selling Price:</b> £{{camera.sell_price}}</p>
+        <p class="stock_count"><b>Stock Count:</b> {{camera.stock}}</p>
+        {% endif %}
+    {% endfor %}
+</div>
+
 {% endblock %}
