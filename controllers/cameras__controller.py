@@ -69,9 +69,10 @@ def edit_form(id):
 
 @cameras_blueprint.route("/cameras/<id>/edit", methods=["POST"])
 def edit_camera(id):
+    camera_to_update = camera_repository.select(id)
     name = request.form['name']
     make_id = request.form['make_id']
-    type =  request.form['type']
+    type =  camera_to_update.type
     description = request.form['description']
     stock= request.form['stock']
     buy_price = request.form['buy_price']
