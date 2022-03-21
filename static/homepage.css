@@ -11,6 +11,10 @@
 
 }
 
+.home_header_container {
+    height: 250px;
+}
+
 .homepage_links {
     display: flex;
     font-family: Bebas Neue, sans-serif;
@@ -18,8 +22,8 @@
 
 .homepage_links > div {
     margin:auto;
-    margin-top: 60px;
-    background-color: #2D3142;
+    margin-bottom: 65px;
+    background-color: #4F5D75;
     height: 300px;
     width: 500px;
     text-align: center;

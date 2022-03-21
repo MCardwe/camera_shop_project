@@ -1,4 +1,7 @@
-/* .footer_container {
+.footer_container {
     background-color: #BFC0C0;
-
-} */
+    padding: 2px;
+    margin-top: 30px;
+    color: #4F5D75;
+    text-align: center;
+}
