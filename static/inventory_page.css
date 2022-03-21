@@ -2,21 +2,31 @@
 .cameras_container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px 30px;
+    gap: 25px 20px;
     margin-top: 25px;
     font-family: Bebas Neue, sans-serif;
 }
 
-.cameras_container > div>p>b>a {
-    color: #BFC0C0;
-    font-size: 20px;
-    
-}
+.cameras_container > div h2 a:hover {
+    color: #EF8354;
+} 
 
 .cameras_container > div {
     background-color: #2D3142;
-    margin-left: 15px;
     border-radius: 20px;
+    border: 1px solid #BFC0C0;
+}
+
+.cameras_container > div > h2  {
     text-align: center;
-    border: 3px solid #BFC0C0;
+}
+
+.cameras_container > div > h2 > a {
+    color: #BFC0C0;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.cameras_container div p b {
+    padding-left: 10px;
 }
