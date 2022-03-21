@@ -1,0 +1,22 @@
+
+.cameras_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px 30px;
+    margin-top: 25px;
+    font-family: Bebas Neue, sans-serif;
+}
+
+.cameras_container > div>p>b>a {
+    color: #BFC0C0;
+    font-size: 20px;
+    
+}
+
+.cameras_container > div {
+    background-color: #2D3142;
+    margin-left: 15px;
+    border-radius: 20px;
+    text-align: center;
+    border: 3px solid #BFC0C0;
+}

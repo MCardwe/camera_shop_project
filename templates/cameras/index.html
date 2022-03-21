@@ -4,14 +4,16 @@
 
 <div class="cameras_container">
     {% for camera in cameras %}
-        <hr>
-        <p><b><a href='/cameras/{{camera.id}}'>{{camera.make.name}} {{camera.name}}</a></b></p>
-        
-        <p><b>Type :</b> {{camera.type}} <b>Description:</b> {{camera.description}} <b>ID:</b> {{camera.id}}</p>
-        <p><b>Buying Price:</b> £{{camera.buy_price}}</p>
-        <p><b>Selling Price:</b> £{{camera.sell_price}}</p>
-        <p><b>Stock Count:</b> <i {% if camera.stock > 6 %}
-            class='stock_count_green' {% elif camera.stock < 3 %} class="stock_count_red" {% else %} class="stock_count_yellow {% endif %}>{{camera.stock}}</i></p>
+        <div>
+            <p><b><a href='/cameras/{{camera.id}}'>{{camera.make.name}} {{camera.name}}</a></b></p>
+            <p><b>Type :</b> {{camera.type}} 
+            <p><b>Description:</b> {{camera.description}}</p> 
+            <p><b>ID:</b> {{camera.id}}</p>
+            <p><b>Buying Price:</b> £{{camera.buy_price}}</p>
+            <p><b>Selling Price:</b> £{{camera.sell_price}}</p>
+            <p><b>Stock Count:</b> <i {% if camera.stock > 6 %}
+                class="stock_count_green" {% elif camera.stock <= 3 %} class="stock_count_red" {% elif camera.stock > 3 and camera.stock < 6 %} class="stock_count_yellow" {% endif %}> {{camera.stock}}</i></p>
+        </div>
     {% endfor %}
 </div>
 

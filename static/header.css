@@ -11,19 +11,19 @@
 }
 
 .header_container > h1 {
-    margin-left: 170px;
+    margin-left: 148px;
     text-align: center;
     font-family: Bebas Neue, sans-serif;
 }
 
 .navigation > ul {
-    margin-top: 36px;
+    margin-top: 32px;
     list-style: none;
     display: flex;
 }
 
 .navigation > ul > li {
-    margin-right: 15px;
+    margin-right: 10px;
     font-size: 20px;
 }
 
