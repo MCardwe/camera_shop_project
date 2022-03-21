@@ -46,5 +46,13 @@ def delete(id):
 def show(id):
     cameras = camera_repository.select_all()
     make = make_repository.select(id)
+    cameras_list = []
     no_cameras = False
+    for camera in cameras:
+        if camera.make.id == make.id:
+            cameras_list.append(camera)
+
+    if len(cameras_list) == 0:
+        no_cameras = True
+        
     return render_template("/makes/show.html", cameras=cameras, make=make, no_cameras=no_cameras)

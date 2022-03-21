@@ -5,10 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/header.css">
+    <link rel="stylesheet" href="/static/footer.css">
+    <link rel="stylesheet" href="/static/homepage.css">
+    <link rel="stylesheet" href="/static/inventory_page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=League+Spartan:wght@100&display=swap" rel="stylesheet">
     <title>Inventory Manager</title>
 </head>
 <header class="header_container">
-    <h1>Inventory Manager System</h1>
     <nav class="navigation">
         <ul>
             <li><a href='/'>Home</a></li>
@@ -16,9 +22,14 @@
             <li><a href='/cameras/new'>Add Camera</a></li>
         </ul>
     </nav>
+    <h1>Inventory Manager System</h1>
 </header>
 <body>
     {% block content %}
     {% endblock %}
 </body>
+
+<!-- <footer class="footer_container">
+    <h2>Max's Fantastic Inventory Manager</h2>
+</footer> -->
 </html>

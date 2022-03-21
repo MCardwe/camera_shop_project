@@ -13,13 +13,10 @@
         <p><b>Buying Price:</b> £{{camera.buy_price}}</p>
         <p><b>Selling Price:</b> £{{camera.sell_price}}</p>
         <p class="stock_count"><b>Stock Count:</b> {{camera.stock}}</p>
-
-        {% else %}
-        {% set no_cameras = True %}
         {% endif %}
     {% endfor %}
 
-    {% if no_cameras %}
+    {% if no_cameras == True %}
         <hr>
         <h3>Oh dear, looks like we haven't got any cameras in stock from {{make.name}}</h3>
     {% endif %}

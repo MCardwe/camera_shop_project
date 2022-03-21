@@ -1,18 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
+
     <div class="home_header_container">
         <h1>Welcome to MCShops Inventory Manager</h1>
     </div> 
-        
-    <div>
-        <h2><a href='/cameras'>View full Inventory</a></h2>
-        <h3><a href='/makes'>View all makes</a></h3>
-    </div>
+    
+    <div class="homepage_links">
+        <div class="view_options">
+            <h2><a href='/cameras'>View full Inventory</a></h2>
+            <h3><a href='/makes'>View all makes</a></h3>
+        </div>
 
-    <div>
-        <h1>Here to add something?</h1>
-        <h2><a href='/cameras/new'>Add a new camera</a></h2>
-        <h2><a href='/makes/new'>Add a new make</a></h2>>
+        <div>
+            <h1>Here to add something?</h1>
+            <hr>
+            <div class="new_options">
+                <h2><a href='/cameras/new'>Add a new camera</a></h2>
+                <h2><a href='/makes/new'>Add a new make</a></h2>
+            </div>
+        </div>
     </div>
 {% endblock %}

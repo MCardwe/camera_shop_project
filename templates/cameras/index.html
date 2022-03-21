@@ -10,7 +10,8 @@
         <p><b>Type :</b> {{camera.type}} <b>Description:</b> {{camera.description}} <b>ID:</b> {{camera.id}}</p>
         <p><b>Buying Price:</b> £{{camera.buy_price}}</p>
         <p><b>Selling Price:</b> £{{camera.sell_price}}</p>
-        <p class="stock_count"><b>Stock Count:</b> {{camera.stock}}</p>
+        <p><b>Stock Count:</b> <i {% if camera.stock > 6 %}
+            class='stock_count_green' {% elif camera.stock < 3 %} class="stock_count_red" {% else %} class="stock_count_yellow {% endif %}>{{camera.stock}}</i></p>
     {% endfor %}
 </div>
 

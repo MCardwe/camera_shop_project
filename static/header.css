@@ -1,0 +1,38 @@
+.header_container {
+    background-color: #BFC0C0;
+    color: #4F5D75;
+    width: 100%;
+    padding: 5px;
+}
+
+.header_container {
+    text-align: center;
+    display: flex;
+}
+
+.header_container > h1 {
+    margin-left: 170px;
+    text-align: center;
+    font-family: Bebas Neue, sans-serif;
+}
+
+.navigation > ul {
+    margin-top: 36px;
+    list-style: none;
+    display: flex;
+}
+
+.navigation > ul > li {
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+.navigation > ul > li > a {
+    color: #4F5D75;
+    text-decoration: none;
+    font-family: Bebas Neue, sans-serif;
+}
+
+.navigation > ul > li > a:hover {
+    color: #EF8354;
+}

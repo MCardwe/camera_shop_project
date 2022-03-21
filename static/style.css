@@ -1,4 +1,18 @@
 
 .stock_count_yellow {
-    
+    color: yellow;
+}
+
+.stock_count_green {
+    color: green;
+}
+
+.stock_count_red {
+    color: red;
+}
+
+body {
+    margin: 0;
+    background-color: #4F5D75;
+    color: #BFC0C0;
 }
