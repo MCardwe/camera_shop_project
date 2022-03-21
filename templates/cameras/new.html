@@ -4,12 +4,12 @@
 
 <form class="new_form_container" action="/cameras" method="POST">
     <div>
-        <label for="name">Name:</label>
+        <label for="name">Name:</label> <br>
         <input type="text" name="name" placeholder="name" required>
     </div>
 
     <div>
-        <label for="make">Make:</label>
+        <label for="make">Make:</label> <br>
         <select id="make" name="make_id">
             {% for make in makes %}
                 <option value="{{make.id}}">{{make.name}}</option>
@@ -18,7 +18,7 @@
     </div>
 
     <div>
-        <label for="type">Type of Camera:</label>
+        <label for="type">Type of Camera:</label> <br>
         <select id="type" name="type">
             {% for camera in cameras %}
                 <option value="{{camera.type}}">{{camera.type}}</option>
@@ -27,22 +27,22 @@
     </div>
 
     <div>
-        <label for="description">Description:</label>
+        <label for="description">Description:</label> <br>
         <input type="text" name="description" placeholder="description">
     </div>
 
     <div>
-        <label for="stock">Stock Count:</label>
+        <label for="stock">Stock Count:</label><br>
         <input type="number" name="stock" placeholder="0">
     </div>
 
     <div>
-        <label for="buy_price">Buy Price:</label>
+        <label for="buy_price">Buy Price:</label><br>
         <input type="number" name="buy_price" placeholder="0">
     </div>
 
     <div>
-        <label for="sell_price">Sell Price:</label>
+        <label for="sell_price">Sell Price:</label> <br>
         <input type="number" name="sell_price" placeholder="0">
     </div>
     

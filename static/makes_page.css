@@ -10,7 +10,7 @@
     text-align: center;
     background-color: #4F5D75;
     border-radius: 20px;  
-    border: 1px solid #BFC0C0;
+    border: 2px solid #2D3142;
 }
 
 .makes_container div a {
@@ -19,9 +19,9 @@
 }
 
 .makes_container div h3 a {
-    border: 3px solid #2D3142 ;
-    background-color: #BFC0C0;
+    border: 1px solid #BFC0C0 ;
+    background-color: #2D3142;
     padding: 5px;
     border-radius: 10px;
-    color: #2D3142;
+    color: #BFC0C0;
 }

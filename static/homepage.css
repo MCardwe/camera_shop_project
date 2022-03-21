@@ -28,7 +28,11 @@
     width: 500px;
     text-align: center;
     border-radius: 30px;
-    border: 3px solid #BFC0C0;
+    border: 3px solid #2D3142;
+}
+
+.homepage_links > div > h1 {
+    color: #BFC0C0;
 }
 
 .new_options {
