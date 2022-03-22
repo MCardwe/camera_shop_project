@@ -1,15 +1,31 @@
 
 
 .new_form_container {
-    text-align: center;
+    display: grid;
+    /* grid-template-columns: 1fr; */
+    margin-left: 35.5%;
+    justify-content: center;
     font-family: Bebas Neue, sans-serif;
     font-size: 25px;
-    height: 650px;
-    background-color: #BFC0C0;
-    color: #2D3142;
+    height: 700px;
+    background-color: #2D3142;
+    color: #BFC0C0;
     margin-bottom: 0;
+    width: 400px;
+    border-left: 3px solid #4F5D75;
+    border-right: 3px solid #4F5D75;
+    padding-bottom: 40px;
 }
 
-.new_form_container input {
-    size: 20px;
+.new_form_container > div >input, select {
+    margin: 5px;
+    padding: 6px;
+}
+
+.new_form_container > div {
+    margin-top: 15px;
+}
+
+.form_page {
+    text-align: center;
 }

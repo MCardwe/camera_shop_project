@@ -1,0 +1,17 @@
+
+
+.makes_new_container {
+    text-align: center;
+}
+
+.makes_new_container input, text{
+    padding: 7px;
+}
+
+.makes_new_container label {
+    font-size: 25px;
+}
+
+input [type=submit] {
+    padding: 10px;
+}
