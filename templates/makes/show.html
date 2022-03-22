@@ -2,20 +2,26 @@
 
 {% block content %}
 
-<div class="show_container_make">
-    <h2>Here are all the cameras in the inventory from {{make.name}}</h2>
-    {% for camera in cameras %}
-        {% if camera.make.id == make.id %}
-        <hr>
-        <p><b><a href='/cameras/{{camera.id}}'>{{camera.make.name}} {{camera.name}}</a></b></p>
-        
-        <p><b>Type :</b> {{camera.type}} <b>Description:</b> {{camera.description}} <b>ID:</b> {{camera.id}}</p>
-        <p><b>Buying Price:</b> £{{camera.buy_price}}</p>
-        <p><b>Selling Price:</b> £{{camera.sell_price}}</p>
-        <p class="stock_count"><b>Stock Count:</b> {{camera.stock}}</p>
-        {% endif %}
-    {% endfor %}
+<div class="filter_options_container">
+    <h2>Currently viewing: Sorted by {{make.name}} cameras</h2>
+</div>
 
+
+<div class="cameras_container">
+    {% for camera in cameras %}
+        <div>
+            <h2><a href='/cameras/{{camera.id}}' class="camera_name_box">{{camera.make.name}} {{camera.name}}</a></h2>
+            <hr>
+            <p><b>Type :</b> <a href="/cameras/{{camera.id}}/type">{{camera.type}}</a>
+            <p><b>Description:</b> {{camera.description}}</p> 
+            <p><b>ID:</b> {{camera.id}}</p>
+            <p><b>Buying Price:</b> £{{camera.buy_price}}</p>
+            <p><b>Selling Price:</b> £{{camera.sell_price}}</p>
+            <p><b>Stock Count:</b> <i {% if camera.stock > 6 %}
+                class="stock_count_green" {% elif camera.stock <= 3 %} class="stock_count_red" {% elif camera.stock > 3 and camera.stock < 6 %} class="stock_count_yellow" {% endif %}> {{camera.stock}}</i></p>
+        </div>
+    {% endfor %}
+</div>
     {% if no_cameras == True %}
         <hr>
         <h3>Oh dear, looks like we haven't got any cameras in stock from {{make.name}}</h3>

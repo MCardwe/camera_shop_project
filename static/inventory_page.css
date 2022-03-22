@@ -35,3 +35,13 @@
 .cameras_container div p {
     color: #BFC0C0;
 }
+
+.cameras_container div p a{
+    color: #BFC0C0;
+}
+
+.filter_options_container > h2 {
+    text-align: center;
+    font-display: flex;
+    justify-content: space-between;
+}
