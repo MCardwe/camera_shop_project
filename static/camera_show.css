@@ -1,0 +1,8 @@
+.camera_container_show {
+    text-align: center;
+}
+
+.camera_container_show > div > p > b {
+    font-size: 20px;
+
+}

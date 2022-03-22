@@ -56,3 +56,19 @@ def show(id):
         no_cameras = True
         
     return render_template("/makes/show.html", cameras=cameras_list, make=make, no_cameras=no_cameras)
+
+@makes_blueprint.route("/makes/<id>/deactivate")
+def deactivate(id):
+    make_to_edit = make_repository.select(id)
+    make_to_edit.active = False
+    make = Make(make_to_edit.name, make_to_edit.id, make_to_edit.active,)
+    make_repository.update(make)
+    return redirect("/makes")
+
+@makes_blueprint.route("/makes/<id>/activate")
+def activate(id):
+    make_to_edit = make_repository.select(id)
+    make_to_edit.active = True
+    make = Make(make_to_edit.name, make_to_edit.id, make_to_edit.active,)
+    make_repository.update(make)
+    return redirect("/makes")

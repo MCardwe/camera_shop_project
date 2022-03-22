@@ -8,8 +8,8 @@ from models.make import Make
 
 def save(make):
     
-    sql = "INSERT INTO makes (name) VALUES (%s) RETURNING *"
-    values = [make.name]
+    sql = "INSERT INTO makes (name, active) VALUES (%s, %s) RETURNING *"
+    values = [make.name, make.active]
 
     results = run_sql(sql, values)
     id = results[0]['id']
@@ -25,7 +25,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        make = Make(row['name'], row['id'])
+        make = Make(row['name'], row['id'], row['active'])
         makes.append(make)
 
     return makes
@@ -39,13 +39,13 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        make = Make(result['name'], result['id'])
+        make = Make(result['name'], result['id'], result['active'])
     return make
 
 def update(make):
     
-    sql = "UPDATE makes SET name = %s WHERE id = %s"
-    values = [make.name, make.id]
+    sql = "UPDATE makes SET (name, active) = (%s, %s) WHERE id = %s"
+    values = [make.name, make.active, make.id]
 
     run_sql(sql, values)
 

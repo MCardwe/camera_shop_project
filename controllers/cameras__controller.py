@@ -12,6 +12,10 @@ cameras_blueprint = Blueprint("cameras", __name__)
 @cameras_blueprint.route('/cameras', methods = ['GET'])
 def cameras():
     cameras = camera_repository.select_all()
+    active_cameras = []
+    for camera in cameras:
+        if camera.make.active == True:
+            active_cameras.append(camera)
 
     markup_of_stock = 0
     buy_price_total = 0
@@ -26,7 +30,7 @@ def cameras():
 
     markup_percentage = (markup_of_stock / buy_price_total) * 100
 
-    return render_template('cameras/index.html', cameras=cameras, markup=markup_of_stock, markup_percentage=markup_percentage)
+    return render_template('cameras/index.html', cameras=active_cameras, markup=markup_of_stock, markup_percentage=markup_percentage)
 
 @cameras_blueprint.route('/cameras/new', methods=['GET'])
 def new_camera():

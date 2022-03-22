@@ -7,9 +7,6 @@ import repositories.camera_repository as camera_repository
 import repositories.make_repository as make_repository
 
 
-# camera = camera_repository.select(14)
-# print(camera)
-
 camera_repository.delete_all()
 make_repository.delete_all()
 
@@ -29,7 +26,7 @@ make_repository.save(make_olympus)
 
 camera_compact_dslr = Camera("250d", make_canon, "Compact DSLR", "Lightweight APS-C DSLR mid-range camera", 5, 250, 500)
 camera_mirroless = Camera("a7", make_sony, "Mirrorless Camera", "Full frame mirrorless high end camera", 3, 600, 1200)
-camera_compact_mirroless = Camera("M50", make_canon, "Compact Mirroless", "Lightweight APS-C mirrorless mid-range camera", 4, 300, 600)
+camera_compact_mirroless = Camera("M50", make_canon, "Compact Mirrorless", "Lightweight APS-C mirrorless mid-range camera", 4, 300, 600)
 camera_dslr = Camera("5D MKIV", make_canon, "DSLR", "Full frame DSLR high end camera", 2, 1000, 2000)
 
 camera_repository.save(camera_dslr)

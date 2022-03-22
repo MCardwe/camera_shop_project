@@ -6,7 +6,17 @@
 
         <div>
             <p><h1><a href="/makes/{{make.id}}">{{make.name}}</a></h1></p>
-            <h3><a href="/makes/{{make.id}}/edit">Edit </a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="/makes/{{make.id}}/delete"> Delete</a></h3>
+            <h3><a href="/makes/{{make.id}}/edit">Edit </a> &nbsp; &nbsp; &nbsp; &nbsp; 
+            {% if make.active == True %}
+                <form action="/makes/{{make.id}}/deactivate"> 
+                  <button type="submit">Deactivate</button>
+            </form> 
+            {% elif make.active == False %}
+                <form action="/makes/{{make.id}}/activate"> 
+                  <button type="submit">Activate</button>
+            </form> 
+            {% endif %}
+            &nbsp; &nbsp; &nbsp; &nbsp; <a href="/makes/{{make.id}}/delete"> Delete</a></h3>
         </div>
 
     {% endfor %}
