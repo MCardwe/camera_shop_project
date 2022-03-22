@@ -22,11 +22,16 @@
 }
 
 .cameras_container > div > h2 > a {
-    color: #BFC0C0;
+    color: #EF8354;
     font-size: 20px;
     text-decoration: none;
 }
 
 .cameras_container div p b {
     padding-left: 10px;
+    color: #BFC0C0;
+}
+
+.cameras_container div p {
+    color: #BFC0C0;
 }

@@ -71,3 +71,18 @@ def edit_camera(id):
     camera_repository.update(camera)
 
     return redirect('/cameras')
+
+@cameras_blueprint.route("/cameras/<id>/type", methods=["GET"])
+def show_type(id):
+    cameras_with_same_type = []
+
+    camera = camera_repository.select(id)
+    camera_type = camera.type
+
+    all_cameras = camera_repository.select_all()
+
+    for camera in all_cameras:
+        if camera.type == camera_type:
+            cameras_with_same_type.append(camera)
+
+    return render_template("/cameras/type.html", cameras = cameras_with_same_type, camera_type = camera_type)
