@@ -17,7 +17,7 @@
             <p><b>Buying Price:</b> £{{camera.buy_price}}</p>
             <p><b>Selling Price:</b> £{{camera.sell_price}}</p>
             <p><b>Stock Count:</b> <i {% if camera.stock > 6 %}
-                class="stock_count_green" {% elif camera.stock <= 3 %} class="stock_count_red" {% elif camera.stock > 3 and camera.stock < 6 %} class="stock_count_yellow" {% endif %}> {{camera.stock}}</i></p>
+                class="stock_count_green" {% elif camera.stock < 1 %} class="stock_count_red" {% elif camera.stock > 0 and camera.stock < 6 %} class="stock_count_yellow" {% endif %}> {{camera.stock}}</i></p>
         </div>
     {% endfor %}
 </div>

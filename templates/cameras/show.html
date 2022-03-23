@@ -7,7 +7,8 @@
     <p><b>Make: </b><a href='/makes/{{camera.make.id}}'>{{camera.make.name}}</a></p>
     <p><b>Type: </b>{{camera.type}}</p>
     <p><b>Description:</b> {{camera.description}}</p>
-    <p><b>Stock Count:</b> {{camera.stock}}</p>
+    <p><b>Stock Count:</b> <i {% if camera.stock > 6 %}
+        class="stock_count_green" {% elif camera.stock < 1 %} class="stock_count_red" {% elif camera.stock > 0 and camera.stock < 6 %} class="stock_count_yellow" {% endif %}> {{camera.stock}}</i></p>
     <p><b>Buying Price: </b>£{{camera.buy_price}}</p>
     <p><b>Selling Pirce: </b>£{{camera.sell_price}}</p>
     <p><b>ID: </b>{{camera.id}} <a href="/cameras/{{camera.id}}/edit">Edit</p>
