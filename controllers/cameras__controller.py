@@ -98,8 +98,12 @@ def show_type(id):
     camera_type = camera.type
 
     all_cameras = camera_repository.select_all()
-
+    active_cameras = []
     for camera in all_cameras:
+        if camera.make.active == True:
+            active_cameras.append(camera)
+
+    for camera in active_cameras:
         if camera.type == camera_type:
             cameras_with_same_type.append(camera)
 

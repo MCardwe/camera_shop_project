@@ -21,9 +21,10 @@
         <div>
             <label for="type">Type of Camera:</label> <br>
             <select id="type" name="type">
-                {% for camera in cameras %}
-                    <option value="{{camera.type}}">{{camera.type}}</option>
-                {% endfor %}
+                <option value="DSLR">DSLR</option>
+                <option value="Compact DSLR">Compact DSLR</option>
+                <option value="Mirrorless">Mirrorless</option>
+                <option value="Compact Mirrorless">Compact Mirrorless</option>
             </select>
         </div>
 
